@@ -5,7 +5,9 @@ function Add(str) {
   if (!str) {
     return 0;
   }
-  return parseInt(str);
+  return str.split(',')
+    .map(i => parseInt(i))
+    .reduce((sum, num) => (sum + num), 0);
 }
 
 module.exports = Add;
