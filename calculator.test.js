@@ -15,5 +15,8 @@ describe('String Calculator', () => {
   });
   test('Validate single number string to return the number', () => {
     expect(Add('5')).toBe(5);
+  });
+  test('Validate mulitple number separated by comma to return sum', () => {
+    expect(Add('1,2')).toBe(3);
   })
 });
