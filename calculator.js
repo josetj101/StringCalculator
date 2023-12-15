@@ -5,11 +5,7 @@ function Add(str) {
   if (!str) {
     return 0;
   }
-  const [ , second] = str.split('//');
-  let delimiter;
-  if (second) {
-    delimiter = second.split('\n')[0];
-  }
+  const delimiter = str.match(/(?<=\[)(.*?)(?=\])/g);
   return str.split(',')
     .reduce((arr, str) => [...arr, ...str.split('\n')],[])
     .reduce((arr, str) => [...arr, ...str.split(delimiter)],[])
