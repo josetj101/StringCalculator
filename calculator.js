@@ -14,7 +14,12 @@ function Add(str) {
     .reduce((arr, str) => [...arr, ...str.split('\n')],[])
     .reduce((arr, str) => [...arr, ...str.split(delimiter)],[])
     .map(i => (parseInt(i) || 0))
-    .reduce((sum, num) => (sum + num), 0);
+    .reduce((sum, num) => {
+      if (num < 0) {
+        throw Error('negatives not allowed');
+      }
+      return sum + num;
+    } , 0);
 }
 
 module.exports = Add;
