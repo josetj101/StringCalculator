@@ -30,6 +30,8 @@ describe('String Calculator', () => {
   });
   test('Validate number bigger than 1000 to be ignored', () => {
     expect(Add('1003,2,4')).toBe(6);
-  })
-
+  });
+  test('Validate delimiter of any length to be supported', () => {
+    expect(Add('//[***]\n1***2***3')).toBe(6);
+  });
 });
