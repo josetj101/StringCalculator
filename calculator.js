@@ -5,17 +5,17 @@ function Add(str) {
   if (!str) {
     return 0;
   }
-  const delimiter = str.match(/(?<=\[)(.*?)(?=\])/g);
-  return str.split(',')
-    .reduce((arr, str) => [...arr, ...str.split('\n')],[])
-    .reduce((arr, str) => [...arr, ...str.split(delimiter)],[])
-    .map(i => (parseInt(i) || 0))
+  const [pattern, numbers] = str.split('\n');
+  const delimiters = pattern.match(/(?<=\[)(.*?)(?=\])/g);
+  return delimiters.reduce((nummberStr, delimiter) => nummberStr.replaceAll(delimiter,'y'), numbers)
+    .split('y')
     .reduce((sum, num) => {
-      if (num < 0) {
+      const number = parseInt(num) || 0;
+      if (number < 0) {
         throw Error('negatives not allowed');
       }
-      return num > 1000 ? sum : sum + num;
-    } , 0);
+      return number > 1000 ? sum : sum + number;
+    },0);
 }
 
 module.exports = Add;
