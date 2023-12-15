@@ -18,7 +18,7 @@ function Add(str) {
       if (num < 0) {
         throw Error('negatives not allowed');
       }
-      return sum + num;
+      return num > 1000 ? sum : sum + num;
     } , 0);
 }
 
