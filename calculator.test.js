@@ -21,5 +21,8 @@ describe('String Calculator', () => {
   });
   test('Validate multiple number separated by newline char to return sum', () => {
     expect(Add('1\n2,3')).toBe(6);
+  });
+  test('Validate new delimiter support for string', () => {
+    expect(Add('//;\n1;2')).toBe(3);
   })
 });
