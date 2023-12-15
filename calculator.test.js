@@ -18,5 +18,8 @@ describe('String Calculator', () => {
   });
   test('Validate mulitple number separated by comma to return sum', () => {
     expect(Add('1,2')).toBe(3);
+  });
+  test('Validate multiple number separated by newline char to return sum', () => {
+    expect(Add('1\n2,3')).toBe(6);
   })
 });
