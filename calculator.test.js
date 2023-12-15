@@ -13,4 +13,7 @@ describe('String Calculator', () => {
   test('Validate empty string input to return 0', () => {
     expect(Add('')).toBe(0);
   });
+  test('Validate single number string to return the number', () => {
+    expect(Add('5')).toBe(5);
+  })
 });
