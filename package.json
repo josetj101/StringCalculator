@@ -1,0 +1,26 @@
+{
+  "name": "stringcalculator",
+  "version": "0.0.1",
+  "description": "String calculator for adding numbers",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "setupFilesAfterEnv": ["jest-extended/all"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josetj101/StringCalculator.git"
+  },
+  "author": "josetj101",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josetj101/StringCalculator/issues"
+  },
+  "homepage": "https://github.com/josetj101/StringCalculator#readme",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-extended": "^4.0.2"
+  }
+}
