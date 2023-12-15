@@ -25,4 +25,7 @@ describe('String Calculator', () => {
   test('Validate new delimiter support for string', () => {
     expect(Add('//;\n1;2')).toBe(3);
   });
+  test('Validate negative number not allowed', () => {
+    expect(() => Add('-1,2,4')).toThrow('negatives not allowed');
+  })
 });
