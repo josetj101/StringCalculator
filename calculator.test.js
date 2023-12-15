@@ -24,5 +24,5 @@ describe('String Calculator', () => {
   });
   test('Validate new delimiter support for string', () => {
     expect(Add('//;\n1;2')).toBe(3);
-  })
+  });
 });

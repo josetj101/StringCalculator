@@ -5,9 +5,15 @@ function Add(str) {
   if (!str) {
     return 0;
   }
+  const [ , second] = str.split('//');
+  let delimiter;
+  if (second) {
+    delimiter = second.split('\n')[0];
+  }
   return str.split(',')
     .reduce((arr, str) => [...arr, ...str.split('\n')],[])
-    .map(i => parseInt(i))
+    .reduce((arr, str) => [...arr, ...str.split(delimiter)],[])
+    .map(i => (parseInt(i) || 0))
     .reduce((sum, num) => (sum + num), 0);
 }
 
